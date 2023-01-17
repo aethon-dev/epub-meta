@@ -135,7 +135,6 @@ cover/
 .settings/org.eclipse.ltk.core.refactoring.prefs
 .settings/org.eclipse.wst.validation.prefs
 *.bat
-*.sh
 *.coverage
 *.pyc
 *.pyo
