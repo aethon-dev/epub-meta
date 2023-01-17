@@ -376,8 +376,10 @@ def get_epub_metadata(filepath, read_cover_image=True, read_toc=True):
         # Most books store authors using epub tags, so no worries.
         pass
 
-
-    file_size_in_bytes = os.path.getsize(filepath)
+    if isinstance(filepath, str):
+        file_size_in_bytes = os.path.getsize(filepath)
+    else:
+        file_size_in_bytes = filepath.getbuffer().nbytes # assume the file is of type io.BytesIO
 
     data = odict({
         'epub_version': _discover_epub_version(opf_xmldoc),
